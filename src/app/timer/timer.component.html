@@ -1,0 +1,17 @@
+<div class="dot">
+  <div class="dot-text" *ngIf="loading">
+    <i class="fa fa-spinner fa-pulse fa-2x"></i>
+  </div>
+  <div class="dot-text" *ngIf="!loading && !comingUp">
+    <p><i>{{message}}</i></p>
+    <i class="far fa-heart"></i>
+  </div>
+  <div class="dot-text" *ngIf="!loading && comingUp">
+    <span class="days"><span class="daysnumber">{{daysToHoliday}}</span> <i>{{daysToHoliday === 1 ? 'dag' : 'dagen'}}</i></span><br>
+    <span class="hours">{{hoursToHoliday}} uur</span>
+    <span class="minutes">{{minutesToHoliday}} {{minutesToHoliday === 1 ? 'minuut' : 'minuten'}}</span><br>
+    <span class="seconds">{{secondsToHoliday}} {{secondsToHoliday === 1 ? 'seconde' : 'seconden'}}</span>
+    <p><i>{{message}}</i></p>
+    <i class="far fa-heart"></i>
+  </div>
+</div>
