@@ -6,10 +6,8 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./timer.component.css']
 })
 export class TimerComponent implements OnInit {
-  eersteVakantieDag: any = new Date('Dec 24, 2019 16:00:00');
+  eersteVakantieDag: any = new Date('Dec 24, 2020 16:00:00');
   eersteWerkdag: any = new Date('Jan 27, 2020 07:00:00');
-  // eersteVakantieDag: any = new Date('Dec 24, 2018 16:00:00');
-  // eersteWerkdag: any = new Date('Jan 27, 2019 07:00:00');
   daysToHoliday: number;
   hoursToHoliday: number;
   minutesToHoliday: number;
@@ -36,11 +34,11 @@ export class TimerComponent implements OnInit {
     } else {
       difference = this.eersteWerkdag - now;
       if (difference > 0) {
-        this.message = 'tot Nienke weer terug is :)';
+        this.message = 'Het is Kerst';
         this.getTime(difference);
         this.comingUp = true;
       } else {
-        this.message = 'Nienke gaat voorlopig niet op vakantie :(';
+        this.message = 'Het duurt nog wel een tijdje voor het kerst is';
         this.comingUp = false;
       }
     }

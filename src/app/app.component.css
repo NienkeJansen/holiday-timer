@@ -1,0 +1,16 @@
+.hero {
+  height: 100%;
+}
+
+.bg-image {
+  background-image: url("../assets/images/kieran-white-480956-unsplash.png");
+  background-color: rgb(247, 247, 247);
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+}
+
+audio {
+  display: none;
+}
