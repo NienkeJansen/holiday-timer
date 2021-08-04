@@ -6,8 +6,8 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./timer.component.css']
 })
 export class TimerComponent implements OnInit {
-  eersteVakantieDag: any = new Date('Dec 24, 2020 16:00:00');
-  eersteWerkdag: any = new Date('Jan 27, 2020 07:00:00');
+  eersteVakantieDag: any = new Date('Dec 24, 2021 16:00:00');
+  eersteWerkdag: any = new Date('Jan 2, 2022 07:00:00');
   daysToHoliday: number;
   hoursToHoliday: number;
   minutesToHoliday: number;
