@@ -1,4 +1,4 @@
 # Hoe lang nog tot kerst?
 
-Ga naar https://nienkejansen.github.io/holiday-timer/ 
+Ga naar https://www.ishetalkerst.nl 
 en kom er achter..
