@@ -6,8 +6,8 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./timer.component.css']
 })
 export class TimerComponent implements OnInit {
-  eersteVakantieDag: any = new Date('Dec 24, 2022 16:00:00');
-  eersteWerkdag: any = new Date('Jan 2, 2023 07:00:00');
+  eersteKerstDag: any;
+  laatsteKerstDag: any;
   daysToHoliday: number;
   hoursToHoliday: number;
   minutesToHoliday: number;
@@ -21,18 +21,20 @@ export class TimerComponent implements OnInit {
 
   ngOnInit() {
     this.loading = true;
+    this.eersteKerstDag = new Date('Dec 24, 2023 16:00:00');
+    this.laatsteKerstDag = new Date('Dec 28, 2023 07:00:00');
     window.setInterval(() => this.setTimer(), 1000);
   }
 
   private setTimer() {
     const now = new Date().getTime();
-    let difference = this.eersteVakantieDag - now;
+    let difference = this.eersteKerstDag - now;
     if (difference > 0) {
       this.message = 'tot Kerst';
       this.comingUp = true;
       this.getTime(difference);
     } else {
-      difference = this.eersteWerkdag - now;
+      difference = this.laatsteKerstDag - now;
       if (difference > 0) {
         this.message = 'Het is Kerst';
         this.getTime(difference);
