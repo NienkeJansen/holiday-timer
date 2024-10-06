@@ -21,8 +21,8 @@ export class TimerComponent implements OnInit {
 
   ngOnInit() {
     this.loading = true;
-    this.eersteKerstDag = new Date('Dec 24, 2023 16:00:00');
-    this.laatsteKerstDag = new Date('Dec 28, 2023 07:00:00');
+    this.eersteKerstDag = new Date('Dec 24, 2024 16:00:00');
+    this.laatsteKerstDag = new Date('Dec 28, 2024 07:00:00');
     window.setInterval(() => this.setTimer(), 1000);
   }
 
