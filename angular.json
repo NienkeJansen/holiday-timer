@@ -15,7 +15,8 @@
           "options": {
             "aot": true,
             "outputPath": {
-              "base": "dist/app-holiday"
+              "base": "dist/app-holiday",
+              "browser": ""
             },
             "index": "src/index.html",
             "polyfills": [
