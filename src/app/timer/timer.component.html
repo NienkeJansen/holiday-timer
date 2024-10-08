@@ -2,11 +2,7 @@
   <div class="dot-text" *ngIf="loading">
     <span class="fa fa-spinner fa-pulse fa-2x christmas-red"></span>
   </div>
-  <div class="dot-text" *ngIf="!loading && !comingUp">
-    <p><em>{{message}}</em></p>
-    <span class="far fa-heart"></span>
-  </div>
-  <div class="dot-text" *ngIf="!loading && comingUp">
+  <div class="dot-text" *ngIf="!loading">
     <span class="days"><span class="daysnumber christmas-red">{{daysToHoliday}}</span> <em>{{daysToHoliday === 1 ? 'dag' : 'dagen'}}</em></span><br>
     <span class="hours">{{hoursToHoliday}} uur</span>
     <span class="minutes">{{minutesToHoliday}} {{minutesToHoliday === 1 ? 'minuut' : 'minuten'}}</span><br>

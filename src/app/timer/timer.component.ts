@@ -6,8 +6,9 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./timer.component.css']
 })
 export class TimerComponent implements OnInit {
-  eersteKerstDag: any;
-  laatsteKerstDag: any;
+  eersteKerstDag: Date;
+  laatsteKerstDag: Date;
+  today = new Date();
   daysToHoliday: number;
   hoursToHoliday: number;
   minutesToHoliday: number;
@@ -16,32 +17,36 @@ export class TimerComponent implements OnInit {
   loading: boolean;
   comingUp: boolean;
 
-  constructor() {
-  }
-
   ngOnInit() {
     this.loading = true;
-    this.eersteKerstDag = new Date('Dec 24, 2024 16:00:00');
-    this.laatsteKerstDag = new Date('Dec 28, 2024 07:00:00');
+    this.eersteKerstDag = this.setKerstdag(24, 16);
+    this.laatsteKerstDag = this.setKerstdag(28, 7);
     window.setInterval(() => this.setTimer(), 1000);
+  }
+
+  private setKerstdag(dag: number, tijd: number) {
+    const kerstdag = new Date();
+    kerstdag.setFullYear(this.today.getFullYear(), 11, dag);
+    kerstdag.setHours(tijd, 0, 0);
+    return kerstdag;
   }
 
   private setTimer() {
     const now = new Date().getTime();
-    let difference = this.eersteKerstDag - now;
+    let difference = this.eersteKerstDag.getTime() - now;
     if (difference > 0) {
       this.message = 'tot Kerst';
-      this.comingUp = true;
       this.getTime(difference);
     } else {
-      difference = this.laatsteKerstDag - now;
+      difference = this.laatsteKerstDag.getTime() - now;
       if (difference > 0) {
         this.message = 'Het is Kerst';
         this.getTime(difference);
-        this.comingUp = true;
       } else {
-        this.message = 'Het duurt nog wel een tijdje voor het kerst is';
-        this.comingUp = false;
+        const eersteKerstdagVolgendJaar = this.setKerstdag(24, 16).setFullYear(this.today.getFullYear() + 1);
+        difference = eersteKerstdagVolgendJaar - now;
+        this.message = 'tot Kerst';
+        this.getTime(difference);
       }
     }
     this.loading = false;
